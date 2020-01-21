@@ -3,20 +3,10 @@
     {
       "id": 1,
       "task": "empty the garbage",
-      "date": "21/01/2020",
-      "dead line": "27/01/2020"
-    },
-    {
-      "task": "learn React hooks",
-      "date": "21/01/2020",
-      "dead line": "01/02/2020",
-      "id": 2
-    },
-    {
-      "task": "apprendre à jouer tifa's theme",
-      "date": "2020-01-21T16:21:23.183Z",
-      "dead-line": "2020-01-28T16:21:23.183Z",
-      "id": 3
+      "note": "it's absolutly disgusting and needs to be done",
+      "beggining": "21/01/2020",
+      "deadline": "27/01/2020",
+      "timeleft": "7 days"
     }
   ],
   "done" : [

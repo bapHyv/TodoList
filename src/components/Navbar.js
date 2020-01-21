@@ -15,34 +15,34 @@ const Navbar = () => {
 		<Router>
 			<nav className="navbar">
 				<NavLink
+					className="navlink"
 					exact
 					to="/"
 					activeStyle={{ textDecoration: 'underline' }}
-					style={{ color: 'black', textDecoration: 'none' }}
 				>
 					{' '}
 					My to do list{' '}
 				</NavLink>
 				<NavLink
+					className="navlink"
 					to="/addatodo"
 					activeStyle={{ textDecoration: 'underline' }}
-					style={{ color: 'black', textDecoration: 'none' }}
 				>
 					{' '}
 					Add a todo{' '}
 				</NavLink>
 				<NavLink
+					className="navlink"
 					to="/managemytodos"
 					activeStyle={{ textDecoration: 'underline' }}
-					style={{ color: 'black', textDecoration: 'none' }}
 				>
 					{' '}
 					Manage my todos{' '}
 				</NavLink>
 				<NavLink
+					className="navlink"
 					to="/todosdone"
 					activeStyle={{ textDecoration: 'underline' }}
-					style={{ color: 'black', textDecoration: 'none' }}
 				>
 					{' '}
 					Todos done

@@ -1,46 +1,48 @@
 import React, { Component } from 'react';
-import axios from 'axios'
+import axios from 'axios';
 
 export default class MyTodosList extends Component {
 	constructor() {
 		super();
 		this.state = {
-			firstName: '',
-			lastName: '',
-			task: ''
+			data: []
 		};
 	}
 
-	handleChange = event => {
-		const { name, value } = event.target;
-		this.setState({
-			[name]: value
-		});
-	};
-
 	componentDidMount() {
-		axios.get('/tasks').then(data => console.log(data));
-	}
-
-	handleClick = () => {
-		const firstDate = new Date();
-		axios.post('/tasks', {
-			task: this.state.task,
-			date: firstDate,
-			'dead-line': new Date(firstDate.getTime() + 7 * 24 * 60 * 60 * 1000)
+		axios.get('/tasks').then(data => {
+			console.log(data.data);
+			this.setState({ data: data.data });
 		});
-	};
+	}
 	render() {
 		return (
 			<div>
-				<h1>To do list</h1>
-				<input
-					type="text"
-					name="task"
-					value={this.state.task}
-					onChange={this.handleChange}
-				/>
-				<button onClick={this.handleClick}>new task</button>
+				<h1>My to do list</h1>
+				<table>
+					<thead>
+						<tr>
+							<th>todo</th>
+							<th>note</th>
+							<th>beggining</th>
+							<th>dead line</th>
+							<th>time left</th>
+						</tr>
+					</thead>
+					<tbody>
+						{this.state.data.map(task => {
+							return (
+								<tr key={task.id}>
+									<td>{task.task}</td>
+									<td>{task.note}</td>
+									<td>{task.beggining}</td>
+									<td>{task.deadline}</td>
+									<td>{task.timeleft}</td>
+								</tr>
+							);
+						})}
+					</tbody>
+				</table>
 			</div>
 		);
 	}
