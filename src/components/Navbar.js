@@ -6,7 +6,7 @@ import {
 	NavLink
 } from 'react-router-dom';
 import MyTodosList from './MyTodosList';
-import ManageMyTodos from './ManageMyTodos';
+import ManageMyTodos from './manageMyTodos/ManageMyTodos';
 import TodosDone from './TodosDone';
 import AddATodos from './AddATodos';
 
@@ -20,31 +20,27 @@ const Navbar = () => {
 					to="/"
 					activeStyle={{ textDecoration: 'underline' }}
 				>
-					{' '}
-					My to do list{' '}
+					My to do list
 				</NavLink>
 				<NavLink
 					className="navlink"
 					to="/addatodo"
 					activeStyle={{ textDecoration: 'underline' }}
 				>
-					{' '}
-					Add a todo{' '}
+					Add a todo
 				</NavLink>
 				<NavLink
 					className="navlink"
 					to="/managemytodos"
 					activeStyle={{ textDecoration: 'underline' }}
 				>
-					{' '}
-					Manage my todos{' '}
+					Manage my todos
 				</NavLink>
 				<NavLink
 					className="navlink"
 					to="/todosdone"
 					activeStyle={{ textDecoration: 'underline' }}
 				>
-					{' '}
 					Todos done
 				</NavLink>
 			</nav>

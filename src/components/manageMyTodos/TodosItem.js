@@ -1,4 +1,5 @@
 import React from 'react';
+import ModifyModal from './ModifyModal'
 
 const TodosItem = ({ todo, handleClickDelete }) => {
 	const {
@@ -20,7 +21,7 @@ const TodosItem = ({ todo, handleClickDelete }) => {
 				<button onClick={() => handleClickDelete(todo)}>Delete</button>
 			</td>
 			<td>
-				<button>Modify</button>
+				<ModifyModal buttonLabel='Modify' todo={todo} />
 			</td>
 		</tr>
 	);

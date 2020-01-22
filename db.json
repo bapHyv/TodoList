@@ -1,12 +1,16 @@
 {
   "tasks": [
     {
-      "task": "Postuler wildcodeschool",
-      "note": "finir portfolio",
-      "beggining": "2020-01-22T16:02:29.148Z",
-      "deadline": "2020-01-29T16:02:29.148Z",
-      "timeleft": 7,
+      "task": "postuler wildcodeschool",
+      "note": "finir application",
+      "timeleft": "8",
       "id": 1
+    },
+    {
+      "task": "nettoyer vitre ",
+      "note": "utiliser bon produit",
+      "timeleft": "8",
+      "id": 2
     }
   ],
   "done": [

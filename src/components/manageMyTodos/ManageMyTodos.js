@@ -11,13 +11,17 @@ export default class ManageMyTodos extends Component {
 	}
 
 	handleClickDelete = todo => {
-		axios.post('/done/', todo )
+		axios.post('/done/', todo);
 		axios.delete(`/tasks/${todo.id}`);
 		console.log(todo);
 		axios.get('/tasks').then(data => {
 			this.setState({ data: data.data });
 		});
 	};
+
+	handleClickModify = todo => {
+		
+	}
 
 	componentDidMount() {
 		axios.get('/tasks').then(data => {
@@ -29,6 +33,7 @@ export default class ManageMyTodos extends Component {
 		return (
 			<div>
 				<h1>Manage My Todos</h1>
+
 				<table>
 					<thead>
 						<tr>
