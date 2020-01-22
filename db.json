@@ -1,22 +1,6 @@
 {
   "tasks": [
     {
-      "task": "Nettoyer intérieur et exterieure voiture",
-      "note": "penser à bien faire les jantes",
-      "beggining": "2020-01-22T11:13:05.977Z",
-      "deadline": "2020-01-30T11:13:05.977Z",
-      "timeleft": 8,
-      "id": 1
-    },
-    {
-      "task": "Aller changer maillot de bain",
-      "note": "demander à essayer le prochain",
-      "beggining": "2020-01-22T11:14:03.830Z",
-      "deadline": "2020-01-24T11:14:03.830Z",
-      "timeleft": 2,
-      "id": 2
-    },
-    {
       "task": "Aller à la CAF",
       "note": "prendre papier paye région",
       "beggining": "2020-01-22T11:16:24.848Z",
