@@ -10,18 +10,24 @@ export default class ManageMyTodos extends Component {
 		};
 	}
 
-	handleClickDelete = todo => {
-		axios.post('/done/', todo);
-		axios.delete(`/tasks/${todo.id}`);
-		console.log(todo);
-		axios.get('/tasks').then(data => {
+	handleClickDelete = async todo => {
+		let doneArrayLength
+		await axios.get('/done/').then(data => {
+			doneArrayLength = data.data.length
+			console.log(doneArrayLength)
+		})
+		await axios.post('/done/', {
+			id:doneArrayLength + 1,
+			task: todo.task,
+			note: todo.note,
+			beggining: todo.beggining,
+			deadline: todo.deadline
+		})
+		await axios.delete(`/tasks/${todo.id}`);
+		await axios.get('/tasks').then(data => {
 			this.setState({ data: data.data });
 		});
 	};
-
-	handleClickModify = todo => {
-		
-	}
 
 	componentDidMount() {
 		axios.get('/tasks').then(data => {

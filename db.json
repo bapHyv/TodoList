@@ -1,42 +1,47 @@
 {
   "tasks": [
     {
-      "task": "postuler wildcodeschool",
-      "note": "finir application",
-      "timeleft": "8",
-      "id": 1
-    },
-    {
       "task": "nettoyer vitre ",
       "note": "utiliser bon produit",
-      "timeleft": "8",
-      "id": 2
+      "timeleft": "5",
+      "id": 1
     }
   ],
   "done": [
     {
-      "task": "Aller à la CAF",
-      "note": "prendre papier paye région",
-      "beggining": "2020-01-22T11:16:24.848Z",
-      "deadline": "2020-01-24T11:16:24.848Z",
-      "timeleft": 2,
-      "id": 3
-    },
-    {
-      "task": "Postuler wildcodeschool",
-      "note": "finir portfolio",
-      "beggining": "2020-01-22T11:17:15.674Z",
-      "deadline": "2020-01-24T11:17:15.674Z",
-      "timeleft": 2,
-      "id": 4
-    },
-    {
+      "id": 1,
       "task": "Nettoyer intérieur et exterieure voiture",
-      "note": "Porter attention au jantes",
-      "beggining": "2020-01-22T16:01:03.659Z",
-      "deadline": "2020-01-27T16:01:03.659Z",
-      "timeleft": 5,
-      "id": 1
+      "note": "Penser à faire les vitres",
+      "beggining": "2020-01-22T18:36:57.728Z",
+      "deadline": "2020-01-30T18:36:57.728Z"
+    },
+    {
+      "id": 2,
+      "task": "Aller à la caf",
+      "note": "penser à prendre les payes de la région",
+      "beggining": "2020-01-22T18:39:48.928Z",
+      "deadline": "2020-01-24T18:39:48.928Z"
+    },
+    {
+      "id": 3,
+      "task": "pexer mon skill a wow",
+      "note": "faire les raccourcis",
+      "beggining": "2020-01-22T18:40:42.615Z",
+      "deadline": "2020-02-15T18:40:42.615Z"
+    },
+    {
+      "id": 4,
+      "task": "Postuler wildcodeschool",
+      "note": "Finir le portfolio",
+      "beggining": "2020-01-22T18:41:09.206Z",
+      "deadline": "2020-01-25T18:41:09.206Z"
+    },
+    {
+      "id": 5,
+      "task": "presave track de rerino",
+      "note": "utiliser tout les comptes",
+      "beggining": "2020-01-22T18:42:33.780Z",
+      "deadline": "2020-01-28T18:42:33.780Z"
     }
   ]
 }
