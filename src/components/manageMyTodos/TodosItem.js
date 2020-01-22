@@ -6,16 +6,16 @@ const TodosItem = ({ todo, handleClickDelete }) => {
 		id,
 		task,
 		note,
-		beggining,
-		deadline,
+		starts,
+		ends,
 		timeleft
 	} = todo;
 	return (
 		<tr>
 			<td>{task}</td>
 			<td>{note}</td>
-			<td>{beggining}</td>
-			<td>{deadline}</td>
+			<td>{starts}</td>
+			<td>{ends}</td>
 			<td>{timeleft}</td>
 			<td>
 				<button onClick={() => handleClickDelete(todo)}>Delete</button>

@@ -9,6 +9,17 @@ export default class MyTodosList extends Component {
 		};
 	}
 
+	daysLeftCalculator = endsParameter => {
+		const now = new Date().getTime();
+		const ends = new Date(endsParameter).getTime();
+	
+		const diffTime = Math.abs(ends - now);
+	
+		const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+	
+		return diffDays;
+	};
+
 	componentDidMount() {
 		axios.get('/tasks').then(data => {
 			this.setState({ data: data.data });
@@ -24,9 +35,9 @@ export default class MyTodosList extends Component {
 						<tr>
 							<th>todo</th>
 							<th>note</th>
-							<th>beggining</th>
-							<th>dead line</th>
-							<th>time left</th>
+							<th>starts (mm/dd/yyyy)</th>
+							<th>ends (mm/dd/yyyy)</th>
+							<th>days left</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -35,9 +46,9 @@ export default class MyTodosList extends Component {
 								<tr key={task.id}>
 									<td>{task.task}</td>
 									<td>{task.note}</td>
-									<td>{task.beggining}</td>
-									<td>{task.deadline}</td>
-									<td>{task.timeleft}</td>
+									<td>{task.starts}</td>
+									<td>{task.ends}</td>
+									<td>{this.daysLeftCalculator(task.ends)}</td>
 								</tr>
 							);
 						})}

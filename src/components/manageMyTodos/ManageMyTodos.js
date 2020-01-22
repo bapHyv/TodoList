@@ -45,9 +45,9 @@ export default class ManageMyTodos extends Component {
 						<tr>
 							<th>todo</th>
 							<th>note</th>
-							<th>beggining</th>
-							<th>dead line</th>
-							<th>time left</th>
+							<th>starts</th>
+							<th>ends</th>
+							<th>days left</th>
 						</tr>
 					</thead>
 					<tbody>

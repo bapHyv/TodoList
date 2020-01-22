@@ -1,10 +1,25 @@
 {
   "tasks": [
     {
-      "task": "nettoyer vitre ",
-      "note": "utiliser bon produit",
-      "timeleft": "5",
+      "task": "Postuler wildcodeschool de Lyon",
+      "note": "montrer que j'aime la pédagogie",
+      "starts": "01/22/2020",
+      "ends": "02/03/2020",
       "id": 1
+    },
+    {
+      "task": "pexer mon skill a wow",
+      "note": "Un bon ennemie est un ennemie gelet",
+      "starts": "01/22/2020",
+      "ends": "02/16/2020",
+      "id": 2
+    },
+    {
+      "task": "test",
+      "note": "test",
+      "starts": "01/22/2020",
+      "ends": "01/22/2020",
+      "id": 3
     }
   ],
   "done": [
@@ -12,36 +27,57 @@
       "id": 1,
       "task": "Nettoyer intérieur et exterieure voiture",
       "note": "Penser à faire les vitres",
-      "beggining": "2020-01-22T18:36:57.728Z",
-      "deadline": "2020-01-30T18:36:57.728Z"
+      "starts": "2020-01-22T18:36:57.728Z",
+      "ends": "2020-01-30T18:36:57.728Z"
     },
     {
       "id": 2,
       "task": "Aller à la caf",
       "note": "penser à prendre les payes de la région",
-      "beggining": "2020-01-22T18:39:48.928Z",
-      "deadline": "2020-01-24T18:39:48.928Z"
+      "starts": "2020-01-22T18:39:48.928Z",
+      "ends": "2020-01-24T18:39:48.928Z"
     },
     {
       "id": 3,
       "task": "pexer mon skill a wow",
       "note": "faire les raccourcis",
-      "beggining": "2020-01-22T18:40:42.615Z",
-      "deadline": "2020-02-15T18:40:42.615Z"
+      "starts": "2020-01-22T18:40:42.615Z",
+      "ends": "2020-02-15T18:40:42.615Z"
     },
     {
       "id": 4,
       "task": "Postuler wildcodeschool",
       "note": "Finir le portfolio",
-      "beggining": "2020-01-22T18:41:09.206Z",
-      "deadline": "2020-01-25T18:41:09.206Z"
+      "starts": "2020-01-22T18:41:09.206Z",
+      "ends": "2020-01-25T18:41:09.206Z"
     },
     {
       "id": 5,
       "task": "presave track de rerino",
       "note": "utiliser tout les comptes",
-      "beggining": "2020-01-22T18:42:33.780Z",
-      "deadline": "2020-01-28T18:42:33.780Z"
+      "starts": "2020-01-22T18:42:33.780Z",
+      "ends": "2020-01-28T18:42:33.780Z"
+    },
+    {
+      "id": 6,
+      "task": "Aller changer maillot de bain",
+      "note": "penser à essayer le nouveau !",
+      "starts": "2020-01-22T20:11:09.122Z",
+      "ends": "2020-01-25T20:11:09.122Z"
+    },
+    {
+      "id": 7,
+      "task": "essayer de trouver des nouveaux pull",
+      "note": "prendre avec zipper!",
+      "starts": "22/01/2020",
+      "ends": "2020-01-27T20:14:20.737Z"
+    },
+    {
+      "id": 8,
+      "task": "trouver verre tremper pour telephone",
+      "note": "Penser à prendre le bon format!",
+      "starts": "22/01/2020",
+      "ends": "30/01/2020"
     }
   ]
 }

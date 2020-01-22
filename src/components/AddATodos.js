@@ -7,9 +7,8 @@ export default class AddATodos extends Component {
 		this.state = {
 			todo: '',
 			note: '',
-			beggining: '',
-			deadline: '',
-			timeleft: ''
+			starts: '',
+			ends: '',
 		};
 	}
 
@@ -24,24 +23,39 @@ export default class AddATodos extends Component {
 		axios.get('/tasks').then(data => console.log(data));
 	}
 
+	dateRightFormat = (day = 0) => {
+		const newDate = new Date();
+		const today = new Date(newDate.getTime() + day * 24 * 60 * 60 *1000);
+	
+		let dd = today.getDate()
+		let mm =  today.getMonth() + 1
+		let yyyy = today.getFullYear()
+		
+		if (dd < 10) {
+			dd = '0' + dd
+		}
+		
+		if (mm < 10) {
+			mm = '0' + mm
+		}
+		
+		const date = `${mm}/${dd}/${yyyy}`
+	
+		return date
+	}
+
 	handleClick = () => {
-		const now = new Date();
-		const deadlineCalculated = new Date(now.getTime() + this.state.deadline * 24 * 60 * 60 * 1000)
-		const diffTime = Math.abs(deadlineCalculated - now);
-		const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) 
 		axios.post('/tasks', {
 			task: this.state.todo,
 			note: this.state.note,
-			beggining: now,
-			deadline: deadlineCalculated,
-			timeleft: diffDays
+			starts: this.dateRightFormat(),
+			ends: this.dateRightFormat(this.state.deadline)
 		});
 		this.setState({
 			todo: '',
 			note: '',
-			beggining: '',
-			deadline: '',
-			timeleft: ''
+			starts: '',
+			ends: ''
 		})
 	};
 	render() {
@@ -64,7 +78,7 @@ export default class AddATodos extends Component {
 					</div>
 					<div>
 						<label>dead-line in days</label>
-						<input type="number" name="deadline" value={this.state.deadline} onChange={this.handleChange} />
+						<input type="number" name="ends" value={this.state.ends} onChange={this.handleChange} />
 					</div>
 				</div>
 				<button onClick={this.handleClick}>Add a todo</button>
