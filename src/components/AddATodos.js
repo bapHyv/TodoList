@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import axios from 'axios'
+import axios from 'axios';
 
 export default class AddATodos extends Component {
 	constructor() {
 		super();
 		this.state = {
-			firstName: '',
-			lastName: '',
-			task: ''
+			todo: '',
+			note: '',
+			beggining: '',
+			deadline: '',
+			timeleft: ''
 		};
 	}
 
@@ -23,24 +25,49 @@ export default class AddATodos extends Component {
 	}
 
 	handleClick = () => {
-		const firstDate = new Date();
+		const now = new Date();
+		const deadlineCalculated = new Date(now.getTime() + this.state.deadline * 24 * 60 * 60 * 1000)
+		const diffTime = Math.abs(deadlineCalculated - now);
+		const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) 
 		axios.post('/tasks', {
-			task: this.state.task,
-			date: firstDate,
-			'dead-line': new Date(firstDate.getTime() + 7 * 24 * 60 * 60 * 1000)
+			task: this.state.todo,
+			note: this.state.note,
+			beggining: now,
+			deadline: deadlineCalculated,
+			timeleft: diffDays
 		});
+		this.setState({
+			todo: '',
+			note: '',
+			beggining: '',
+			deadline: '',
+			timeleft: ''
+		})
 	};
 	render() {
 		return (
 			<div>
-				<h1>To do list</h1>
-				<input
-					type="text"
-					name="task"
-					value={this.state.task}
-					onChange={this.handleChange}
-				/>
-				<button onClick={this.handleClick}>new task</button>
+				<h1>Add a todo</h1>
+				<div style={{ display: 'flex', flexDirection: 'column' }}>
+					<div>
+						<label>todo</label>
+						<input
+							type="text"
+							name="todo"
+							value={this.state.todo}
+							onChange={this.handleChange}
+						/>
+					</div>
+					<div>
+						<label>note</label>
+						<input type="text" name="note" value={this.state.note} onChange={this.handleChange} />
+					</div>
+					<div>
+						<label>dead-line in days</label>
+						<input type="number" name="deadline" value={this.state.deadline} onChange={this.handleChange} />
+					</div>
+				</div>
+				<button onClick={this.handleClick}>Add a todo</button>
 			</div>
 		);
 	}

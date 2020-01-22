@@ -11,11 +11,11 @@ export default class MyTodosList extends Component {
 
 	componentDidMount() {
 		axios.get('/tasks').then(data => {
-			console.log(data.data);
 			this.setState({ data: data.data });
 		});
 	}
 	render() {
+		
 		return (
 			<div>
 				<h1>My to do list</h1>
