@@ -1,6 +1,16 @@
 {
   "tasks": [
     {
+      "task": "Postuler wildcodeschool",
+      "note": "finir portfolio",
+      "beggining": "2020-01-22T16:02:29.148Z",
+      "deadline": "2020-01-29T16:02:29.148Z",
+      "timeleft": 7,
+      "id": 1
+    }
+  ],
+  "done": [
+    {
       "task": "Aller à la CAF",
       "note": "prendre papier paye région",
       "beggining": "2020-01-22T11:16:24.848Z",
@@ -15,7 +25,14 @@
       "deadline": "2020-01-24T11:17:15.674Z",
       "timeleft": 2,
       "id": 4
+    },
+    {
+      "task": "Nettoyer intérieur et exterieure voiture",
+      "note": "Porter attention au jantes",
+      "beggining": "2020-01-22T16:01:03.659Z",
+      "deadline": "2020-01-27T16:01:03.659Z",
+      "timeleft": 5,
+      "id": 1
     }
-  ],
-  "done": []
+  ]
 }

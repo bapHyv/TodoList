@@ -17,7 +17,7 @@ const TodosItem = ({ todo, handleClickDelete }) => {
 			<td>{deadline}</td>
 			<td>{timeleft}</td>
 			<td>
-				<button onClick={() => handleClickDelete(id)}>Delete</button>
+				<button onClick={() => handleClickDelete(todo)}>Delete</button>
 			</td>
 			<td>
 				<button>Modify</button>

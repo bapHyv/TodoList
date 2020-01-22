@@ -10,9 +10,10 @@ export default class ManageMyTodos extends Component {
 		};
 	}
 
-	handleClickDelete = id => {
-		axios.delete(`/tasks/${id}`);
-		console.log(id);
+	handleClickDelete = todo => {
+		axios.post('/done/', todo )
+		axios.delete(`/tasks/${todo.id}`);
+		console.log(todo);
 		axios.get('/tasks').then(data => {
 			this.setState({ data: data.data });
 		});
