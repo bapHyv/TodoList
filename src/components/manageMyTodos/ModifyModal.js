@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import {
+	daysLeftCalculator,
+	dateRightFormat
+} from '../../Modules/dateRelatedFunctions';
 import axios from 'axios';
 
 const ModifyModal = props => {
@@ -23,16 +27,19 @@ const ModifyModal = props => {
 			: event.target.name === 'deadlineModified'
 			? setDeadlineModified(event.target.value)
 			: null;
-    };
-    
-    const handleConfirm = (todo) => {
-        axios.put(`/tasks/${todo.id}`,{
-            task: todoModified,
-            note: noteModified,
-            timeleft: deadlineModified
-        }).then(toggle)
-        
-    }
+	};
+
+	const handleConfirm = todo => {
+		axios
+			.put(`/tasks/${todo.id}`, {
+				task: todoModified,
+				note: noteModified,
+				starts: todo.starts,
+				ends: dateRightFormat(deadlineModified)
+			})
+			.then(toggle);
+	};
+
 
 	return (
 		<div>
@@ -49,14 +56,18 @@ const ModifyModal = props => {
 							<tr>
 								<th>todo</th>
 								<th>note</th>
-								<th>dead line</th>
+								<th>starts</th>
+								<th>ends</th>
+								<th>days left</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
 								<td>{todo.task}</td>
 								<td>{todo.note}</td>
-								<td>{todo.timeleft}</td>
+								<td>{todo.starts}</td>
+								<td>{todo.ends}</td>
+								<td>{daysLeftCalculator(todo.ends)}</td>
 							</tr>
 						</tbody>
 					</table>
@@ -79,7 +90,7 @@ const ModifyModal = props => {
 						/>
 					</div>
 					<div>
-						<label>dead-line in days</label>
+						<label>ends</label>
 						<input
 							type="number"
 							name="deadlineModified"

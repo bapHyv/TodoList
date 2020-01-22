@@ -1,5 +1,6 @@
 import React from 'react';
 import ModifyModal from './ModifyModal'
+import {daysLeftCalculator} from '../../Modules/dateRelatedFunctions'
 
 const TodosItem = ({ todo, handleClickDelete }) => {
 	const {
@@ -7,8 +8,7 @@ const TodosItem = ({ todo, handleClickDelete }) => {
 		task,
 		note,
 		starts,
-		ends,
-		timeleft
+		ends
 	} = todo;
 	return (
 		<tr>
@@ -16,7 +16,7 @@ const TodosItem = ({ todo, handleClickDelete }) => {
 			<td>{note}</td>
 			<td>{starts}</td>
 			<td>{ends}</td>
-			<td>{timeleft}</td>
+			<td>{daysLeftCalculator(ends)}</td>
 			<td>
 				<button onClick={() => handleClickDelete(todo)}>Delete</button>
 			</td>
