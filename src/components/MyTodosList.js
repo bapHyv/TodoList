@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import {daysLeftCalculator} from '../Modules/dateRelatedFunctions'
 
 export default class MyTodosList extends Component {
 	constructor() {
@@ -8,17 +9,6 @@ export default class MyTodosList extends Component {
 			data: []
 		};
 	}
-
-	daysLeftCalculator = endsParameter => {
-		const now = new Date().getTime();
-		const ends = new Date(endsParameter).getTime();
-	
-		const diffTime = Math.abs(ends - now);
-	
-		const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-	
-		return diffDays;
-	};
 
 	componentDidMount() {
 		axios.get('/tasks').then(data => {
@@ -48,7 +38,7 @@ export default class MyTodosList extends Component {
 									<td>{task.note}</td>
 									<td>{task.starts}</td>
 									<td>{task.ends}</td>
-									<td>{this.daysLeftCalculator(task.ends)}</td>
+									<td>{daysLeftCalculator(task.ends)}</td>
 								</tr>
 							);
 						})}

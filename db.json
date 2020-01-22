@@ -15,10 +15,10 @@
       "id": 2
     },
     {
-      "task": "test",
-      "note": "test",
+      "task": "this is a test",
+      "note": "testing module",
       "starts": "01/22/2020",
-      "ends": "01/22/2020",
+      "ends": "03/07/2020",
       "id": 3
     }
   ],
@@ -78,6 +78,16 @@
       "note": "Penser à prendre le bon format!",
       "starts": "22/01/2020",
       "ends": "30/01/2020"
+    },
+    {
+      "id": 9,
+      "task": "test",
+      "note": "test"
+    },
+    {
+      "id": 10,
+      "task": "this is a test",
+      "note": "testing module"
     }
   ]
 }
