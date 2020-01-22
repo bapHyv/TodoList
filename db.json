@@ -1,125 +1,65 @@
 {
-  "tasks": [
-    {
-      "task": "stp",
-      "note": "fonctionne",
-      "starts": "01/22/2020",
-      "ends": "01/26/2020",
-      "id": 2
-    },
-    {
-      "task": "aller stp",
-      "note": "dit moi que ça fonctionne",
-      "starts": "01/22/2020",
-      "ends": "03/05/2020",
-      "id": 3
-    },
-    {
-      "task": "je crois que ça fonctionne...",
-      "note": "mais c'est sale!",
-      "starts": "01/22/2020",
-      "ends": "02/25/2020",
-      "id": 4
-    },
-    {
-      "task": "on croise les doigts",
-      "note": "ça va fonctionner !!!",
-      "starts": "01/22/2020",
-      "ends": "03/07/2020",
-      "id": 5
-    }
-  ],
+  "tasks": [],
   "done": [
     {
       "id": 1,
-      "task": "Nettoyer intérieur et exterieure voiture",
-      "note": "Penser à faire les vitres",
-      "starts": "2020-01-22T18:36:57.728Z",
-      "ends": "2020-01-30T18:36:57.728Z"
+      "task": "a",
+      "note": "a"
     },
     {
       "id": 2,
-      "task": "Aller à la caf",
-      "note": "penser à prendre les payes de la région",
-      "starts": "2020-01-22T18:39:48.928Z",
-      "ends": "2020-01-24T18:39:48.928Z"
+      "task": "b",
+      "note": "b"
     },
     {
       "id": 3,
-      "task": "pexer mon skill a wow",
-      "note": "faire les raccourcis",
-      "starts": "2020-01-22T18:40:42.615Z",
-      "ends": "2020-02-15T18:40:42.615Z"
+      "task": "c",
+      "note": "c"
     },
     {
       "id": 4,
-      "task": "Postuler wildcodeschool",
-      "note": "Finir le portfolio",
-      "starts": "2020-01-22T18:41:09.206Z",
-      "ends": "2020-01-25T18:41:09.206Z"
+      "task": "d",
+      "note": "d"
     },
     {
       "id": 5,
-      "task": "presave track de rerino",
-      "note": "utiliser tout les comptes",
-      "starts": "2020-01-22T18:42:33.780Z",
-      "ends": "2020-01-28T18:42:33.780Z"
+      "task": "e",
+      "note": "e"
     },
     {
       "id": 6,
-      "task": "Aller changer maillot de bain",
-      "note": "penser à essayer le nouveau !",
-      "starts": "2020-01-22T20:11:09.122Z",
-      "ends": "2020-01-25T20:11:09.122Z"
+      "task": "f",
+      "note": "f"
     },
     {
       "id": 7,
-      "task": "essayer de trouver des nouveaux pull",
-      "note": "prendre avec zipper!",
-      "starts": "22/01/2020",
-      "ends": "2020-01-27T20:14:20.737Z"
+      "task": "f",
+      "note": "f"
     },
     {
       "id": 8,
-      "task": "trouver verre tremper pour telephone",
-      "note": "Penser à prendre le bon format!",
-      "starts": "22/01/2020",
-      "ends": "30/01/2020"
+      "task": "f",
+      "note": "f"
     },
     {
       "id": 9,
-      "task": "test",
-      "note": "test"
+      "task": "f",
+      "note": "f"
     },
     {
       "id": 10,
-      "task": "this is a test",
-      "note": "testing module"
+      "task": "f",
+      "note": "f"
     },
     {
       "id": 11,
-      "task": "I'm testing the empty dead line",
-      "note": "if it works it should be 03/07/2020 in ends column and 45 in days left column"
+      "task": "f",
+      "note": "f"
     },
     {
       "id": 12,
-      "task": "blabla",
-      "note": "blabla"
-    },
-    {
-      "id": 13,
-      "task": "jfzeio",
-      "note": "gihotrehoioihr"
-    },
-    {
-      "id": 14,
-      "task": "farmer des herbes",
-      "note": "Tundra, Icecrown"
-    },
-    {
-      "id": 15,
-      "task": "Qu'est-ce que ça fait si je laisse la date normal",
-      "note": "ça va tout péter je pense"
+      "task": "4aezr9",
+      "note": "kgoerpgkj"
     }
   ]
 }

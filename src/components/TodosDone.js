@@ -1,27 +1,49 @@
-import React, { Component } from 'react'
-import axios from 'axios'
+import React, { Component } from 'react';
+import axios from 'axios';
+import { Button } from 'reactstrap';
 
 export default class TodosDone extends Component {
-    constructor() {
-        super()
-        this.state = {
-            todosDone : []
-        }
-    }
+	constructor() {
+		super();
+		this.state = {
+			todosDone: []
+		};
+	}
 
-    componentWillMount() {
-        axios.get('/done/').then(data => {
-            console.log(data.data)
-            this.setState({
-                todosDone: data.data
-            })
-        })
-    }
+	componentWillMount() {
+		axios.get('/done/').then(data => {
+			console.log(data.data);
+			this.setState({
+				todosDone: data.data
+			});
+		});
+	}
 
-    render() {
-        return (
-            <div>
-				<h1>Todos done</h1>
+	handleClickErase = async () => {
+		let stringId = ''
+		
+		this.state.todosDone.map(e => {
+		stringId += e.id + ','
+		})
+		let stringIdComaLess = stringId.substring(0, stringId.length - 1)
+		console.log(stringIdComaLess)
+
+		await axios.delete(`/done/${stringIdComaLess}`).catch(err => console.error(err))
+		await axios.get('/done/').then(data => {
+			console.log(data.data);
+			this.setState({
+				todosDone: data.data
+			});
+		});
+	}
+	
+	render() {
+		return (
+			<div>
+				<div>
+					<h1>Todos done</h1>
+					<Button color="danger" onClick={this.handleClickErase}>Erase everything</Button>
+				</div>
 				<table>
 					<thead>
 						<tr>
@@ -45,6 +67,6 @@ export default class TodosDone extends Component {
 					</tbody>
 				</table>
 			</div>
-        )
-    }
+		);
+	}
 }
