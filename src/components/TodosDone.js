@@ -27,9 +27,8 @@ export default class TodosDone extends Component {
 						<tr>
 							<th>todo</th>
 							<th>note</th>
-							<th>beggining</th>
-							<th>dead line</th>
-							<th>time left</th>
+							<th>started</th>
+							<th>ended</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -38,9 +37,8 @@ export default class TodosDone extends Component {
 								<tr key={task.id}>
 									<td>{task.task}</td>
 									<td>{task.note}</td>
-									<td>{task.beggining}</td>
-									<td>{task.deadline}</td>
-									<td>{task.timeleft}</td>
+									<td>{task.starts}</td>
+									<td>{task.ends}</td>
 								</tr>
 							);
 						})}
