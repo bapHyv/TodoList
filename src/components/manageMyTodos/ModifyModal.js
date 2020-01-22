@@ -14,8 +14,7 @@ const ModifyModal = props => {
 	const [noteModified, setNoteModified] = useState('');
 	const [deadlineModified, setDeadlineModified] = useState('');
 
-	const toggle = todo => {
-		console.log(todo);
+	const toggle = () => {
 		setModal(!modal);
 	};
 
@@ -29,9 +28,8 @@ const ModifyModal = props => {
 			: null;
 	};
 
-	const handleConfirm = todo => {
-		axios
-			.put(`/tasks/${todo.id}`, {
+	const handleConfirm = async todo => {
+		await axios.put(`/tasks/${todo.id}`, {
 				task: todoModified,
 				note: noteModified,
 				starts: todo.starts,

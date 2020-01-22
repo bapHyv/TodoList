@@ -1,25 +1,32 @@
 {
   "tasks": [
     {
-      "task": "Postuler à la wildcodeschool de Bordeaux",
-      "note": "montrer que j'aime programmer",
+      "task": "stp",
+      "note": "fonctionne",
       "starts": "01/22/2020",
-      "ends": "04/09/2020",
-      "id": 1
-    },
-    {
-      "task": "pexer mon skill a wow",
-      "note": "Un bon ennemie est un ennemie gelet",
-      "starts": "01/22/2020",
-      "ends": "02/16/2020",
+      "ends": "01/26/2020",
       "id": 2
     },
     {
-      "task": "this is a test",
-      "note": "testing module",
+      "task": "aller stp",
+      "note": "dit moi que ça fonctionne",
+      "starts": "01/22/2020",
+      "ends": "03/05/2020",
+      "id": 3
+    },
+    {
+      "task": "je crois que ça fonctionne...",
+      "note": "mais c'est sale!",
+      "starts": "01/22/2020",
+      "ends": "02/25/2020",
+      "id": 4
+    },
+    {
+      "task": "on croise les doigts",
+      "note": "ça va fonctionner !!!",
       "starts": "01/22/2020",
       "ends": "03/07/2020",
-      "id": 3
+      "id": 5
     }
   ],
   "done": [
@@ -88,6 +95,31 @@
       "id": 10,
       "task": "this is a test",
       "note": "testing module"
+    },
+    {
+      "id": 11,
+      "task": "I'm testing the empty dead line",
+      "note": "if it works it should be 03/07/2020 in ends column and 45 in days left column"
+    },
+    {
+      "id": 12,
+      "task": "blabla",
+      "note": "blabla"
+    },
+    {
+      "id": 13,
+      "task": "jfzeio",
+      "note": "gihotrehoioihr"
+    },
+    {
+      "id": 14,
+      "task": "farmer des herbes",
+      "note": "Tundra, Icecrown"
+    },
+    {
+      "id": 15,
+      "task": "Qu'est-ce que ça fait si je laisse la date normal",
+      "note": "ça va tout péter je pense"
     }
   ]
 }
