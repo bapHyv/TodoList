@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import TodosItem from './TodosItem';
+import {dateRightFormat} from '../../Modules/dateRelatedFunctions'
 
 export default class ManageMyTodos extends Component {
 	constructor() {
@@ -16,12 +17,13 @@ export default class ManageMyTodos extends Component {
 			doneArrayLength = data.data.length
 			console.log(doneArrayLength)
 		})
+		console.log(todo)
 		await axios.post('/done/', {
 			id:doneArrayLength + 1,
 			task: todo.task,
 			note: todo.note,
-			beggining: todo.beggining,
-			deadline: todo.deadline
+			started: todo.starts,
+			ended: dateRightFormat()
 		})
 		await axios.delete(`/tasks/${todo.id}`);
 		await axios.get('/tasks').then(data => {

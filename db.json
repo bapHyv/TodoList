@@ -1,80 +1,27 @@
 {
   "tasks": [
     {
-      "task": "ajouter",
-      "note": "un todo",
+      "task": "Aller à la caf",
+      "note": "prendre les payes de la région",
       "starts": "01/23/2020",
-      "ends": "04/10/2020",
-      "id": 1
+      "ends": "01/25/2020",
+      "id": 2
     },
     {
-      "task": "et un eutre",
-      "note": "autre*",
+      "task": "Postuler wildcodeschool",
+      "note": "Essayer les campus de Lyon",
       "starts": "01/23/2020",
-      "ends": "02/22/2020",
-      "id": 2
+      "ends": "01/29/2020",
+      "id": 3
     }
   ],
   "done": [
     {
       "id": 1,
-      "task": "a",
-      "note": "a"
-    },
-    {
-      "id": 2,
-      "task": "b",
-      "note": "b"
-    },
-    {
-      "id": 3,
-      "task": "c",
-      "note": "c"
-    },
-    {
-      "id": 4,
-      "task": "d",
-      "note": "d"
-    },
-    {
-      "id": 5,
-      "task": "e",
-      "note": "e"
-    },
-    {
-      "id": 6,
-      "task": "f",
-      "note": "f"
-    },
-    {
-      "id": 7,
-      "task": "f",
-      "note": "f"
-    },
-    {
-      "id": 8,
-      "task": "f",
-      "note": "f"
-    },
-    {
-      "id": 9,
-      "task": "f",
-      "note": "f"
-    },
-    {
-      "id": 10,
-      "task": "f",
-      "note": "f"
-    },
-    {
-      "id": 11,
-      "task": "f",
-      "note": "f"
-    },
-    {
-      "id": 12,
-      "task": "4aezr9",
-      "note": "kgoerpgkj"
+      "task": "Nettoyer intérieur et exterieure voiture",
+      "note": "Porter attention au jantes",
+      "started": "01/23/2020",
+      "ended": "01/23/2020"
     }
   ]
 }

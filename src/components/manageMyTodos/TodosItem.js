@@ -4,7 +4,6 @@ import {daysLeftCalculator} from '../../Modules/dateRelatedFunctions'
 
 const TodosItem = ({ todo, handleClickDelete }) => {
 	const {
-		id,
 		task,
 		note,
 		starts,

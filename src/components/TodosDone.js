@@ -23,11 +23,9 @@ export default class TodosDone extends Component {
 		let stringId = ''
 		
 		this.state.todosDone.map(e => {
-		stringId += e.id + ','
+		return stringId += e.id + ','
 		})
 		let stringIdComaLess = stringId.substring(0, stringId.length - 1)
-		console.log(stringIdComaLess)
-
 		await axios.delete(`/done/${stringIdComaLess}`).catch(err => console.error(err))
 		await axios.get('/done/').then(data => {
 			console.log(data.data);
@@ -59,8 +57,8 @@ export default class TodosDone extends Component {
 								<tr key={task.id}>
 									<td>{task.task}</td>
 									<td>{task.note}</td>
-									<td>{task.starts}</td>
-									<td>{task.ends}</td>
+									<td>{task.started}</td>
+									<td>{task.ended}</td>
 								</tr>
 							);
 						})}
