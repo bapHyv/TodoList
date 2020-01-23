@@ -10,13 +10,19 @@ const ModifyModal = props => {
 	const { buttonLabel, className, todo } = props;
 
 	const [modal, setModal] = useState(false);
-	const [todoModified, setTodoModified] = useState('');
-	const [noteModified, setNoteModified] = useState('');
+	const [todoModified, setTodoModified] = useState(todo.task);
+	const [noteModified, setNoteModified] = useState(todo.note);
 	const [deadlineModified, setDeadlineModified] = useState('');
 
 	const toggle = () => {
 		setModal(!modal);
 	};
+
+	const handleCancel = () => {
+		toggle()
+		setTodoModified(todo.task)
+		setNoteModified(todo.note)
+	}
 
 	const handleChangeInput = event => {
 		return event.target.name === 'todoModified'
@@ -29,15 +35,38 @@ const ModifyModal = props => {
 	};
 
 	const handleConfirm = async todo => {
-		await axios.put(`/tasks/${todo.id}`, {
-				task: todoModified,
-				note: noteModified,
+		console.log(todo.ends)
+		let endChecked
+		let todoChecked
+		let noteChecked
+
+		if (deadlineModified === '') {
+			endChecked = todo.ends
+		} else {
+			endChecked = dateRightFormat(deadlineModified)
+		}
+
+		if (todoModified === '') {
+			todoChecked = todo.task
+		} else {
+			todoChecked = todoModified
+		}
+
+		if (noteModified === '') {
+			noteChecked = todo.note
+		} else {
+			noteChecked = noteModified
+		}
+		console.log(endChecked)
+		await axios
+			.put(`/tasks/${todo.id}`, {
+				task: todoChecked,
+				note: noteChecked,
 				starts: todo.starts,
-				ends: dateRightFormat(deadlineModified)
+				ends: endChecked
 			})
 			.then(toggle);
 	};
-
 
 	return (
 		<div>
@@ -49,26 +78,6 @@ const ModifyModal = props => {
 				<ModalHeader toggle={toggle}>Modal title</ModalHeader>
 
 				<ModalBody>
-					<table>
-						<thead>
-							<tr>
-								<th>todo</th>
-								<th>note</th>
-								<th>starts</th>
-								<th>ends</th>
-								<th>days left</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>{todo.task}</td>
-								<td>{todo.note}</td>
-								<td>{todo.starts}</td>
-								<td>{todo.ends}</td>
-								<td>{daysLeftCalculator(todo.ends)}</td>
-							</tr>
-						</tbody>
-					</table>
 					<div>
 						<label>todo</label>
 						<input
@@ -102,7 +111,7 @@ const ModifyModal = props => {
 					<Button color="primary" onClick={() => handleConfirm(todo)}>
 						Confirm
 					</Button>
-					<Button color="secondary" onClick={toggle}>
+					<Button color="secondary" onClick={handleCancel}>
 						Cancel
 					</Button>
 				</ModalFooter>

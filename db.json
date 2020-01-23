@@ -1,27 +1,19 @@
 {
   "tasks": [
     {
-      "task": "Aller à la caf",
-      "note": "prendre les payes de la région",
+      "task": "this is a todo",
+      "note": "with a note and a deadline",
       "starts": "01/23/2020",
-      "ends": "01/25/2020",
-      "id": 2
+      "ends": "03/08/2020",
+      "id": 1
     },
     {
-      "task": "Postuler wildcodeschool",
-      "note": "Essayer les campus de Lyon",
+      "task": "this is an other todo",
+      "note": "with an other note",
       "starts": "01/23/2020",
-      "ends": "01/29/2020",
-      "id": 3
+      "ends": "02/04/2020",
+      "id": 2
     }
   ],
-  "done": [
-    {
-      "id": 1,
-      "task": "Nettoyer intérieur et exterieure voiture",
-      "note": "Porter attention au jantes",
-      "started": "01/23/2020",
-      "ended": "01/23/2020"
-    }
-  ]
+  "done": []
 }
