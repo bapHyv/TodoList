@@ -1,17 +1,17 @@
 {
   "tasks": [
     {
-      "task": "this is a todo",
-      "note": "with a note and a deadline",
+      "task": "still working",
+      "note": "???",
       "starts": "01/23/2020",
       "ends": "03/08/2020",
       "id": 1
     },
     {
-      "task": "this is an other todo",
-      "note": "with an other note",
+      "task": "jifozejff",
+      "note": "fejizofjo",
       "starts": "01/23/2020",
-      "ends": "02/04/2020",
+      "ends": "02/07/2020",
       "id": 2
     }
   ],

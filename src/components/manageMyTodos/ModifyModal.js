@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import {
 	daysLeftCalculator,
@@ -7,7 +7,7 @@ import {
 import axios from 'axios';
 
 const ModifyModal = props => {
-	const { buttonLabel, className, todo } = props;
+	const { buttonLabel, className, todo, triggerChange } = props;
 
 	const [modal, setModal] = useState(false);
 	const [todoModified, setTodoModified] = useState(todo.task);
@@ -35,7 +35,6 @@ const ModifyModal = props => {
 	};
 
 	const handleConfirm = async todo => {
-		console.log(todo.ends)
 		let endChecked
 		let todoChecked
 		let noteChecked
@@ -57,7 +56,6 @@ const ModifyModal = props => {
 		} else {
 			noteChecked = noteModified
 		}
-		console.log(endChecked)
 		await axios
 			.put(`/tasks/${todo.id}`, {
 				task: todoChecked,
@@ -65,8 +63,10 @@ const ModifyModal = props => {
 				starts: todo.starts,
 				ends: endChecked
 			})
-			.then(toggle);
+			.then(toggle)
+			.then(triggerChange())
 	};
+
 
 	return (
 		<div>

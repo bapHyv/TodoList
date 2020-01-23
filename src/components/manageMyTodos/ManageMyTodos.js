@@ -7,8 +7,15 @@ export default class ManageMyTodos extends Component {
 	constructor() {
 		super();
 		this.state = {
-			data: []
+			data: [],
+			updateComponent: false
 		};
+	}
+
+	testfunc = () => {
+		this.setState({
+			updateComponent: true
+		})
 	}
 
 	handleClickDelete = async todo => {
@@ -35,6 +42,19 @@ export default class ManageMyTodos extends Component {
 		axios.get('/tasks').then(data => {
 			this.setState({ data: data.data });
 		});
+		this.setState({
+			updateComponent: false
+		})
+	}
+	componentDidUpdate(prevProps, prevState) {
+		if (this.state.updateComponent !== prevState.updateComponent) {
+			axios.get('/tasks').then(data => {
+				this.setState({ 
+					data: data.data,
+					updateComponent: false
+				});
+			});
+		}
 	}
 
 	render() {
@@ -54,11 +74,13 @@ export default class ManageMyTodos extends Component {
 					</thead>
 					<tbody>
 						{this.state.data.map(task => {
+							console.log(task)
 							return (
 								<TodosItem
 									key={task.id}
 									todo={task}
 									handleClickDelete={this.handleClickDelete}
+									triggerChange={this.testfunc}
 								/>
 							);
 						})}
