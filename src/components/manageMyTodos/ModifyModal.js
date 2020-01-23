@@ -7,7 +7,7 @@ import {
 import axios from 'axios';
 
 const ModifyModal = props => {
-	const { buttonLabel, className, todo } = props;
+	const { buttonLabel, className, todo, handleConfirm } = props;
 
 	const [modal, setModal] = useState(false);
 	const [todoModified, setTodoModified] = useState(todo.task);
@@ -34,39 +34,39 @@ const ModifyModal = props => {
 			: null;
 	};
 
-	const handleConfirm = async todo => {
-		console.log(todo.ends)
-		let endChecked
-		let todoChecked
-		let noteChecked
+	// const handleConfirm = async todo => {
+	// 	console.log(todo.ends)
+	// 	let endChecked
+	// 	let todoChecked
+	// 	let noteChecked
 
-		if (deadlineModified === '') {
-			endChecked = todo.ends
-		} else {
-			endChecked = dateRightFormat(deadlineModified)
-		}
+	// 	if (deadlineModified === '') {
+	// 		endChecked = todo.ends
+	// 	} else {
+	// 		endChecked = dateRightFormat(deadlineModified)
+	// 	}
 
-		if (todoModified === '') {
-			todoChecked = todo.task
-		} else {
-			todoChecked = todoModified
-		}
+	// 	if (todoModified === '') {
+	// 		todoChecked = todo.task
+	// 	} else {
+	// 		todoChecked = todoModified
+	// 	}
 
-		if (noteModified === '') {
-			noteChecked = todo.note
-		} else {
-			noteChecked = noteModified
-		}
-		console.log(endChecked)
-		await axios
-			.put(`/tasks/${todo.id}`, {
-				task: todoChecked,
-				note: noteChecked,
-				starts: todo.starts,
-				ends: endChecked
-			})
-			.then(toggle);
-	};
+	// 	if (noteModified === '') {
+	// 		noteChecked = todo.note
+	// 	} else {
+	// 		noteChecked = noteModified
+	// 	}
+	// 	console.log(endChecked)
+	// 	await axios
+	// 		.put(`/tasks/${todo.id}`, {
+	// 			task: todoChecked,
+	// 			note: noteChecked,
+	// 			starts: todo.starts,
+	// 			ends: endChecked
+	// 		})
+	// 		.then(toggle);
+	// };
 
 	return (
 		<div>

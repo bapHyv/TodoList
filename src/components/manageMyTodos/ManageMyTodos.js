@@ -7,9 +7,14 @@ export default class ManageMyTodos extends Component {
 	constructor() {
 		super();
 		this.state = {
-			data: []
+			data: [],
+			todoModified: '',
+			noteModified: '',
+			deadlineModified: ''
 		};
 	}
+
+	
 
 	handleClickDelete = async todo => {
 		let doneArrayLength
@@ -31,10 +36,48 @@ export default class ManageMyTodos extends Component {
 		});
 	};
 
+	handleConfirm = async todo => {
+		console.log(todo.ends)
+		let endChecked
+		let todoChecked
+		let noteChecked
+
+		if (this.deadlineModified === '') {
+			endChecked = todo.ends
+		} else {
+			endChecked = dateRightFormat(this.deadlineModified)
+		}
+
+		if (this.todoModified === '') {
+			todoChecked = todo.task
+		} else {
+			todoChecked = this.todoModified
+		}
+
+		if (this.noteModified === '') {
+			noteChecked = todo.note
+		} else {
+			noteChecked = this.noteModified
+		}
+		console.log(endChecked)
+		await axios
+			.put(`/tasks/${todo.id}`, {
+				task: todoChecked,
+				note: noteChecked,
+				starts: todo.starts,
+				ends: endChecked
+			})
+	};
+
 	componentDidMount() {
 		axios.get('/tasks').then(data => {
 			this.setState({ data: data.data });
 		});
+	}
+
+	componentDidUpdate(prevProps, prevState) {
+		console.log(prevProps)
+		console.log(prevState)
 	}
 
 	render() {
@@ -59,6 +102,7 @@ export default class ManageMyTodos extends Component {
 									key={task.id}
 									todo={task}
 									handleClickDelete={this.handleClickDelete}
+									handleConfirm={this.handleConfirm}
 								/>
 							);
 						})}

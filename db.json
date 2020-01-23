@@ -1,19 +1,32 @@
 {
   "tasks": [
     {
-      "task": "this is a todo",
-      "note": "with a note and a deadline",
       "starts": "01/23/2020",
-      "ends": "03/08/2020",
+      "ends": "01/23/2020",
       "id": 1
     },
     {
-      "task": "this is an other todo",
-      "note": "with an other note",
+      "task": "an other todo",
+      "note": "with an other note and an other deadline",
       "starts": "01/23/2020",
-      "ends": "02/04/2020",
+      "ends": "02/13/2020",
       "id": 2
     }
   ],
-  "done": []
+  "done": [
+    {
+      "id": 1,
+      "task": "this is a todo",
+      "note": "with a note and a deadline",
+      "started": "01/23/2020",
+      "ended": "01/23/2020"
+    },
+    {
+      "id": 2,
+      "task": "this is an other todo",
+      "note": "testing componentDidUpdate",
+      "started": "01/23/2020",
+      "ended": "01/23/2020"
+    }
+  ]
 }

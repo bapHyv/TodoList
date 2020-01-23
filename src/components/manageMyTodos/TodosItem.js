@@ -2,7 +2,7 @@ import React from 'react';
 import ModifyModal from './ModifyModal'
 import {daysLeftCalculator} from '../../Modules/dateRelatedFunctions'
 
-const TodosItem = ({ todo, handleClickDelete }) => {
+const TodosItem = ({ todo, handleClickDelete, handleConfirm }) => {
 	const {
 		task,
 		note,
@@ -20,7 +20,7 @@ const TodosItem = ({ todo, handleClickDelete }) => {
 				<button onClick={() => handleClickDelete(todo)}>Delete</button>
 			</td>
 			<td>
-				<ModifyModal buttonLabel='Modify' todo={todo} />
+				<ModifyModal buttonLabel='Modify' todo={todo} handleConfirm={handleConfirm} />
 			</td>
 		</tr>
 	);
