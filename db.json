@@ -1,19 +1,111 @@
 {
   "tasks": [
     {
-      "task": "this is a todo",
-      "note": "with a note and a deadline",
+      "task": "jiezofjif",
+      "note": "jfieojifz",
       "starts": "01/23/2020",
-      "ends": "03/08/2020",
+      "ends": "01/30/2020",
       "id": 1
     },
     {
-      "task": "this is an other todo",
-      "note": "with an other note",
+      "task": "kofepzkfzopf",
+      "note": "kpkpfaezkpofkoezp",
+      "starts": "01/23/2020",
+      "ends": "01/31/2020",
+      "id": 2
+    },
+    {
+      "task": "fekozpkfoepzk",
+      "note": "kodpzakfopezk",
       "starts": "01/23/2020",
       "ends": "02/04/2020",
-      "id": 2
+      "id": 3
     }
   ],
-  "done": []
+  "done": [
+    {
+      "id": 1,
+      "task": "this is a todo",
+      "note": "with a note and a deadline",
+      "started": "01/23/2020",
+      "ended": "01/23/2020"
+    },
+    {
+      "id": 2,
+      "task": "this is an other todo",
+      "note": "with an other note",
+      "started": "01/23/2020",
+      "ended": "01/23/2020"
+    },
+    {
+      "id": 3,
+      "task": "jkogperjkepo",
+      "note": "kfoezpkfopze",
+      "started": "01/23/2020",
+      "ended": "01/23/2020"
+    },
+    {
+      "id": 4,
+      "task": "kefopfkop",
+      "note": "kfopezkfopezkop",
+      "started": "01/23/2020",
+      "ended": "01/23/2020"
+    },
+    {
+      "id": 5,
+      "task": "kraoprkopakzro",
+      "note": "kropazkropazkop",
+      "started": "01/23/2020",
+      "ended": "01/23/2020"
+    },
+    {
+      "id": 6,
+      "task": "fjeziofjiezofoi",
+      "note": "jfioezjifejziof",
+      "started": "01/23/2020",
+      "ended": "01/23/2020"
+    },
+    {
+      "id": 7,
+      "task": "ijopzekgopop",
+      "note": "kofpekzopfkoezp",
+      "started": "01/23/2020",
+      "ended": "01/23/2020"
+    },
+    {
+      "id": 8,
+      "task": "kfeozpfkzopk",
+      "note": "kofdpekzopfkezopf",
+      "started": "01/23/2020",
+      "ended": "01/23/2020"
+    },
+    {
+      "id": 9,
+      "task": "what the fuck",
+      "note": "????",
+      "started": "01/23/2020",
+      "ended": "01/23/2020"
+    },
+    {
+      "id": 10,
+      "task": "zaropazkpoaz",
+      "note": "korpzeakoprka",
+      "started": "01/23/2020",
+      "ended": "01/23/2020"
+    },
+    {
+      "id": 11,
+      "task": "kojpogrjezfopjop",
+      "note": "oijfezjifoij",
+      "started": "01/23/2020",
+      "ended": "01/23/2020"
+    },
+    {
+      "id": 12,
+      "task": "kfeopzkfzkp",
+      "note": "ezgfezffzeezf",
+      "started": "01/23/2020",
+      "ended": "01/23/2020"
+    }
+  ]
 }

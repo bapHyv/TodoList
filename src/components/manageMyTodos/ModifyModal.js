@@ -20,8 +20,8 @@ const ModifyModal = props => {
 
 	const handleCancel = () => {
 		toggle()
-		setTodoModified(todo.task)
-		setNoteModified(todo.note)
+			setTodoModified(todo.task)
+			setNoteModified(todo.note)
 	}
 
 	const handleChangeInput = event => {
