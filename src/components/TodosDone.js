@@ -12,7 +12,6 @@ export default class TodosDone extends Component {
 
 	componentWillMount() {
 		axios.get('/done/').then(data => {
-			console.log(data.data);
 			this.setState({
 				todosDone: data.data
 			});
@@ -28,7 +27,6 @@ export default class TodosDone extends Component {
 		let stringIdComaLess = stringId.substring(0, stringId.length - 1)
 		await axios.delete(`/done/${stringIdComaLess}`).catch(err => console.error(err))
 		await axios.get('/done/').then(data => {
-			console.log(data.data);
 			this.setState({
 				todosDone: data.data
 			});
@@ -36,6 +34,7 @@ export default class TodosDone extends Component {
 	}
 	
 	render() {
+		const {todosDone} = this.state
 		return (
 			<div>
 				<div>
@@ -52,7 +51,7 @@ export default class TodosDone extends Component {
 						</tr>
 					</thead>
 					<tbody>
-						{this.state.todosDone.map(task => {
+						{todosDone.map(task => {
 							return (
 								<tr key={task.id}>
 									<td>{task.task}</td>

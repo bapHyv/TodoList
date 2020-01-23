@@ -16,7 +16,7 @@ export default class MyTodosList extends Component {
 		});
 	}
 	render() {
-		
+		const {data} = this.state
 		return (
 			<div>
 				<h1>My to do list</h1>
@@ -31,7 +31,7 @@ export default class MyTodosList extends Component {
 						</tr>
 					</thead>
 					<tbody>
-						{this.state.data.map(task => {
+						{data.map(task => {
 							return (
 								<tr key={task.id}>
 									<td>{task.task}</td>

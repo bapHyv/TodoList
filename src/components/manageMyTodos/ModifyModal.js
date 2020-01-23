@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import {
-	daysLeftCalculator,
-	dateRightFormat
-} from '../../Modules/dateRelatedFunctions';
+import { dateRightFormat } from '../../Modules/dateRelatedFunctions';
 import axios from 'axios';
 
 const ModifyModal = props => {
@@ -19,10 +16,10 @@ const ModifyModal = props => {
 	};
 
 	const handleCancel = () => {
-		toggle()
-		setTodoModified(todo.task)
-		setNoteModified(todo.note)
-	}
+		toggle();
+		setTodoModified(todo.task);
+		setNoteModified(todo.note);
+	};
 
 	const handleChangeInput = event => {
 		return event.target.name === 'todoModified'
@@ -35,26 +32,26 @@ const ModifyModal = props => {
 	};
 
 	const handleConfirm = async todo => {
-		let endChecked
-		let todoChecked
-		let noteChecked
+		let endChecked;
+		let todoChecked;
+		let noteChecked;
 
 		if (deadlineModified === '') {
-			endChecked = todo.ends
+			endChecked = todo.ends;
 		} else {
-			endChecked = dateRightFormat(deadlineModified)
+			endChecked = dateRightFormat(deadlineModified);
 		}
 
 		if (todoModified === '') {
-			todoChecked = todo.task
+			todoChecked = todo.task;
 		} else {
-			todoChecked = todoModified
+			todoChecked = todoModified;
 		}
 
 		if (noteModified === '') {
-			noteChecked = todo.note
+			noteChecked = todo.note;
 		} else {
-			noteChecked = noteModified
+			noteChecked = noteModified;
 		}
 		await axios
 			.put(`/tasks/${todo.id}`, {
@@ -64,9 +61,8 @@ const ModifyModal = props => {
 				ends: endChecked
 			})
 			.then(toggle)
-			.then(triggerChange())
+			.then(triggerChange());
 	};
-
 
 	return (
 		<div>

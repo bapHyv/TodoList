@@ -1,19 +1,34 @@
 {
   "tasks": [
     {
-      "task": "still working",
-      "note": "???",
+      "task": "Nettoyer voiture",
+      "note": "Faire les jantes et la poussière à l'intérieure",
       "starts": "01/23/2020",
-      "ends": "03/08/2020",
+      "ends": "01/25/2020",
       "id": 1
     },
     {
-      "task": "jifozejff",
-      "note": "fejizofjo",
+      "task": "Aller à la caf",
+      "note": "prendre les payes de la région",
       "starts": "01/23/2020",
-      "ends": "02/07/2020",
+      "ends": "01/25/2020",
       "id": 2
+    },
+    {
+      "task": "changer maillot de bain",
+      "note": "Essayer le nouveau maillot!",
+      "starts": "01/23/2020",
+      "ends": "01/25/2020",
+      "id": 3
     }
   ],
-  "done": []
+  "done": [
+    {
+      "id": 1,
+      "task": "test",
+      "note": "test",
+      "started": "01/23/2020",
+      "ended": "01/23/2020"
+    }
+  ]
 }

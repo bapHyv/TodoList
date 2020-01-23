@@ -20,10 +20,6 @@ export default class AddATodos extends Component {
 		});
 	};
 
-	componentDidMount() {
-		axios.get('/tasks').then(data => console.log(data));
-	}
-
 	handleClick = () => {
 		axios.post('/tasks', {
 			task: this.state.todo,
@@ -39,6 +35,7 @@ export default class AddATodos extends Component {
 		})
 	};
 	render() {
+		const {todo, note, ends} = this.state
 		return (
 			<div>
 				<h1>Add a todo</h1>
@@ -48,17 +45,17 @@ export default class AddATodos extends Component {
 						<input
 							type="text"
 							name="todo"
-							value={this.state.todo}
+							value={todo}
 							onChange={this.handleChange}
 						/>
 					</div>
 					<div>
 						<label>note</label>
-						<input type="text" name="note" value={this.state.note} onChange={this.handleChange} />
+						<input type="text" name="note" value={note} onChange={this.handleChange} />
 					</div>
 					<div>
 						<label>dead-line in days</label>
-						<input type="number" name="ends" value={this.state.ends} onChange={this.handleChange} />
+						<input type="number" name="ends" value={ends} onChange={this.handleChange} />
 					</div>
 				</div>
 				<button onClick={this.handleClick}>Add a todo</button>
