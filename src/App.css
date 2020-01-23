@@ -5,7 +5,7 @@
 }
 
 .navlink {
-	color:black;
+	color:white;
 	text-decoration: none;
 }
 
@@ -21,9 +21,9 @@ td, th {
   padding: 8px;
 }
 
-tr:nth-child(even) {
+/* tr:nth-child(even) {
   background-color: #dddddd;
-}
+} */
 
 thead{
   background-color: #000000;
@@ -33,4 +33,9 @@ thead{
 h1 {
   display: flex;
   justify-content: center;
+}
+
+body {
+  background-color: black;
+  color: white
 }
