@@ -1,10 +1,21 @@
-
 h1 {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 .navbar {
-  display: flex;
-  justify-content: space-around;
+	display: flex;
+	justify-content: space-around;
+  background-color: rgb(34, 34, 34);
+  margin-bottom: 10px;
+}
+
+.navlink {
+	color: antiquewhite;
+}
+
+.container {
+	margin-bottom: 10px;
+  font-size: small;
+  background-color: rgb(240, 240, 240);
 }

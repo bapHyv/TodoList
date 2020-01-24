@@ -9,16 +9,17 @@ import MyTodos from './manageMyTodos/MyTodos';
 import TodosDone from './TodosDone';
 import { Nav, NavItem } from 'reactstrap';
 
-const Navbar = (props) => {
+const Navbar = props => {
 	return (
 		<Router>
-			<Nav className='navbar'>
+			<Nav className="navbar" style={{marginBottom: '10px', fontSize: '25px'}} >
 				<NavItem>
 					<NavLink
 						className="navlink"
 						exact
 						to="/"
 						activeStyle={{ textDecoration: 'underline' }}
+						
 					>
 						My todos
 					</NavLink>
