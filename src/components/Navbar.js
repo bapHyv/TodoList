@@ -5,51 +5,36 @@ import {
 	Route,
 	NavLink
 } from 'react-router-dom';
-import MyTodosList from './MyTodosList';
-import ManageMyTodos from './manageMyTodos/ManageMyTodos';
+import MyTodos from './manageMyTodos/MyTodos';
 import TodosDone from './TodosDone';
-import AddATodos from './AddATodos';
+import { Nav, NavItem } from 'reactstrap';
 
-const Navbar = () => {
+const Navbar = (props) => {
 	return (
 		<Router>
-			<nav className="navbar">
-				<NavLink
-					className="navlink"
-					exact
-					to="/"
-					activeStyle={{ textDecoration: 'underline' }}
-				>
-					My to do list
-				</NavLink>
-				<NavLink
-					className="navlink"
-					to="/addatodo"
-					activeStyle={{ textDecoration: 'underline' }}
-				>
-					Add a todo
-				</NavLink>
-				<NavLink
-					className="navlink"
-					to="/managemytodos"
-					activeStyle={{ textDecoration: 'underline' }}
-				>
-					Manage my todos
-				</NavLink>
-				<NavLink
-					className="navlink"
-					to="/todosdone"
-					activeStyle={{ textDecoration: 'underline' }}
-				>
-					Todos done
-				</NavLink>
-			</nav>
+			<Nav className='navbar'>
+				<NavItem>
+					<NavLink
+						className="navlink"
+						exact
+						to="/"
+						activeStyle={{ textDecoration: 'underline' }}
+					>
+						My todos
+					</NavLink>
+				</NavItem>
+				<NavItem>
+					<NavLink
+						className="navlink"
+						to="/todosdone"
+						activeStyle={{ textDecoration: 'underline' }}
+					>
+						Todos done
+					</NavLink>
+				</NavItem>
+			</Nav>
 			<Switch>
-				<Route exact path="/" component={MyTodosList} />
-
-				<Route exact path="/addatodo" component={AddATodos} />
-
-				<Route exact path="/managemytodos" component={ManageMyTodos} />
+				<Route exact path="/" component={MyTodos} />
 
 				<Route exact path="/todosdone" component={TodosDone} />
 			</Switch>

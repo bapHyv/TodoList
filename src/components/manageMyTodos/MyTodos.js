@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import TodosItem from './TodosItem';
 import {dateRightFormat} from '../../Modules/dateRelatedFunctions'
+import AddATodos from '../AddATodos'
+import {Table} from 'reactstrap'
 
-export default class ManageMyTodos extends Component {
+export default class MyTodos extends Component {
 	constructor() {
 		super();
 		this.state = {
@@ -59,9 +61,9 @@ export default class ManageMyTodos extends Component {
 		const {data} = this.state
 		return (
 			<div>
-				<h1>Manage My Todos</h1>
+				<h1>My Todos</h1>
 
-				<table>
+				<Table hover>
 					<thead>
 						<tr>
 							<th>todo</th>
@@ -83,7 +85,8 @@ export default class ManageMyTodos extends Component {
 							);
 						})}
 					</tbody>
-				</table>
+				</Table>
+				<AddATodos />
 			</div>
 		);
 	}

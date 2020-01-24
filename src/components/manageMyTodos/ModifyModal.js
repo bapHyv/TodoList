@@ -66,7 +66,7 @@ const ModifyModal = props => {
 
 	return (
 		<div>
-			<Button color="danger" onClick={() => toggle(todo)}>
+			<Button color="primary" onClick={() => toggle(todo)}>
 				{buttonLabel}
 			</Button>
 
@@ -104,7 +104,7 @@ const ModifyModal = props => {
 				</ModalBody>
 
 				<ModalFooter>
-					<Button color="primary" onClick={() => handleConfirm(todo)}>
+					<Button color="success" onClick={() => handleConfirm(todo)}>
 						Confirm
 					</Button>
 					<Button color="secondary" onClick={handleCancel}>
