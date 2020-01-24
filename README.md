@@ -32,4 +32,4 @@ It will allow the package to get **multi-id-delete feature** since it needed in 
 
 To run this application use **`npm run dev`**
 
-Since this web application features a local http server with the package [json-server](https://www.npmjs.com/package/json-server) and has been created with [React](https://reactjs.org/) I used the package [concurrently](https://www.npmjs.com/package/concurrently) to run both on the same terminal.
+Since this web application features a local http server with the package [json-server](https://www.npmjs.com/package/json-server) and has been created with [React](https://reactjs.org/) I used the package [concurrently](https://www.npmjs.com/package/concurrently) to run both with the same terminal.
