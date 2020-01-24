@@ -6,7 +6,9 @@ I have developped this todo list web application with [React](https://reactjs.or
 
 After installing the dependencies, you have to modify couple lines of code in the json-server package.
 
-In the **node_modules/json-server/lib/server/router/plural.js** replace :
+In the **node_modules/json-server/lib/server/router/plural.js** 
+
+**replace:**
 
 resource = db.get(name).removeById(req.params.id).value(); // Remove dependents documents
 const removable = db._.getRemovable(db.getState(), opts);
@@ -16,14 +18,18 @@ db.get(item.name).removeById(item.id).value();
 
 **by:**
 
-req.params.id.split(',').filter(id => id !== '' || id !== undefined || id !== null).forEach(id => {
-			
+req.params.id.split(',').filter(id => id !== '' || id !== undefined || id !== null).forEach(id => {		
   resource = db.get(name).removeById(id).value(); // Remove dependents documents
   const removable = db._.getRemovable(db.getState(), opts);
   removable.forEach(item => {
 	db.get(item.name).removeById(item.id).value();
   });
-
 });
 
 It will allow the package to get **multi-id-delete feature** since it needed in the application.
+
+### Run the application
+
+To run this application use **`npm run dev`**
+
+Since this web application features a local http server with the package [json-server](https://www.npmjs.com/package/json-server) and has been created with [React](https://reactjs.org/) I used the package [concurrently](https://www.npmjs.com/package/concurrently) to run both on the same terminal.
