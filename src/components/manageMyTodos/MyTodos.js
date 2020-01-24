@@ -14,7 +14,7 @@ export default class MyTodos extends Component {
 		};
 	}
 
-	testfunc = () => {
+	updateStateFromChild = () => {
 		this.setState({
 			updateComponent: true
 		})
@@ -80,13 +80,13 @@ export default class MyTodos extends Component {
 									key={task.id}
 									todo={task}
 									handleClickDelete={this.handleClickDelete}
-									triggerChange={this.testfunc}
+									triggerChange={this.updateStateFromChild}
 								/>
 							);
 						})}
 					</tbody>
 				</Table>
-				<AddATodos />
+				<AddATodos triggerChange={this.updateStateFromChild} />
 			</div>
 		);
 	}

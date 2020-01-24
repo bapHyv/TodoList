@@ -6,8 +6,8 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 export default class AddATodos extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {
 			todo: '',
 			note: '',
@@ -43,9 +43,10 @@ export default class AddATodos extends Component {
 			starts: '',
 			ends: new Date()
 		});
+		this.props.triggerChange()
 	};
 	render() {
-		const { todo, note, ends } = this.state;
+		const { todo, note } = this.state;
 		return (
 			<div>
 				<h1>Add a todo</h1>
