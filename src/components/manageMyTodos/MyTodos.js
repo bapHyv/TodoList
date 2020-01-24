@@ -63,7 +63,7 @@ export default class MyTodos extends Component {
 			<div>
 				<h1>My Todos</h1>
 
-				<Table hover>
+				<Table>
 					<thead>
 						<tr>
 							<th>todo</th>
