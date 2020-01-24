@@ -20,22 +20,14 @@
       "starts": "01/24/2020",
       "ends": "01/31/2020",
       "id": 3
-    }
-  ],
-  "done": [
-    {
-      "id": 1,
-      "task": "test",
-      "note": "test",
-      "started": "01/23/2020",
-      "ended": "01/23/2020"
     },
     {
-      "id": 2,
-      "task": "changer maillot de bain",
-      "note": "Essayer le nouveau maillot!",
-      "started": "01/23/2020",
-      "ended": "01/24/2020"
+      "task": "Changer maillot de bain",
+      "note": "Penser à essayer le nouveau",
+      "starts": "01/24/2020",
+      "ends": "01/26/2020",
+      "id": 4
     }
-  ]
+  ],
+  "done": []
 }

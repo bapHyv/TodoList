@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { dateRightFormat } from '../Modules/dateRelatedFunctions';
+import { dateRightFormat, daysLeftCalculator } from '../Modules/dateRelatedFunctions';
 import { Form, FormGroup, Input, Button } from 'reactstrap';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 export default class AddATodos extends Component {
 	constructor() {
@@ -10,9 +12,16 @@ export default class AddATodos extends Component {
 			todo: '',
 			note: '',
 			starts: '',
-			ends: ''
+			ends: new Date()
 		};
 	}
+
+	handleChangeDatePicker = date => {
+		this.setState({
+			ends: date
+		});
+		console.log(this.state.ends);
+	};
 
 	handleChange = event => {
 		const { name, value } = event.target;
@@ -26,13 +35,13 @@ export default class AddATodos extends Component {
 			task: this.state.todo,
 			note: this.state.note,
 			starts: dateRightFormat(),
-			ends: dateRightFormat(this.state.ends)
+			ends: dateRightFormat(daysLeftCalculator(this.state.ends))
 		});
 		this.setState({
 			todo: '',
 			note: '',
 			starts: '',
-			ends: ''
+			ends: new Date()
 		});
 	};
 	render() {
@@ -63,11 +72,10 @@ export default class AddATodos extends Component {
 					</FormGroup>
 					<FormGroup>
 						<label>Deadline</label>
-						<Input
-							type="number"
-							name="ends"
-							value={ends}
-							onChange={this.handleChange}
+						<br/>
+						<DatePicker
+							selected={this.state.ends}
+							onChange={this.handleChangeDatePicker}
 						/>
 					</FormGroup>
 				</Form>
