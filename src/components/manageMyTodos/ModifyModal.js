@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import { dateRightFormat } from '../../Modules/dateRelatedFunctions';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input } from 'reactstrap';
+import { dateRightFormat, daysLeftCalculator } from '../../Modules/dateRelatedFunctions';
 import axios from 'axios';
+import DatePicker from 'react-datepicker';
+
 
 const ModifyModal = props => {
 	const { buttonLabel, className, todo, triggerChange } = props;
@@ -9,10 +11,14 @@ const ModifyModal = props => {
 	const [modal, setModal] = useState(false);
 	const [todoModified, setTodoModified] = useState(todo.task);
 	const [noteModified, setNoteModified] = useState(todo.note);
-	const [deadlineModified, setDeadlineModified] = useState('');
+	const [deadlineModified, setDeadlineModified] = useState(new Date());
 
 	const toggle = () => {
 		setModal(!modal);
+	};
+
+	const handleChangeDatePicker = date => {
+		setDeadlineModified(date)
 	};
 
 	const handleCancel = () => {
@@ -39,7 +45,7 @@ const ModifyModal = props => {
 		if (deadlineModified === '') {
 			endChecked = todo.ends;
 		} else {
-			endChecked = dateRightFormat(deadlineModified);
+			endChecked = deadlineModified
 		}
 
 		if (todoModified === '') {
@@ -58,7 +64,7 @@ const ModifyModal = props => {
 				task: todoChecked,
 				note: noteChecked,
 				starts: todo.starts,
-				ends: endChecked
+				ends: dateRightFormat(daysLeftCalculator(endChecked))
 			})
 			.then(toggle)
 			.then(triggerChange());
@@ -71,34 +77,32 @@ const ModifyModal = props => {
 			</Button>
 
 			<Modal isOpen={modal} toggle={toggle} className={className}>
-				<ModalHeader toggle={toggle}>Modal title</ModalHeader>
+				<ModalHeader toggle={toggle}>Modify</ModalHeader>
 
 				<ModalBody>
 					<div>
-						<label>todo</label>
-						<input
+						<label>Todo</label>
+						<Input
 							type="text"
 							name="todoModified"
 							value={todoModified}
 							onChange={handleChangeInput}
 						/>
 					</div>
-					<div>
-						<label>note</label>
-						<input
+					<div style={{paddingTop: '16px'}}>
+						<label>Note</label>
+						<Input
 							type="text"
 							name="noteModified"
 							value={noteModified}
 							onChange={handleChangeInput}
 						/>
 					</div>
-					<div>
-						<label>ends</label>
-						<input
-							type="number"
-							name="deadlineModified"
-							value={deadlineModified}
-							onChange={handleChangeInput}
+					<div style={{paddingTop: '16px'}}>
+						<label>Deadline</label>
+						<DatePicker
+							selected={deadlineModified}
+							onChange={handleChangeDatePicker}
 						/>
 					</div>
 				</ModalBody>
