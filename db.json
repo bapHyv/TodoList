@@ -1,40 +1,4 @@
 {
-  "tasks": [
-    {
-      "task": "Nettoyer voiture",
-      "note": "Faire les jantes et la poussière à l'intérieure",
-      "starts": "01/23/2020",
-      "ends": "01/25/2020",
-      "id": 1
-    },
-    {
-      "task": "Aller à la caf",
-      "note": "prendre les payes de la région",
-      "starts": "01/23/2020",
-      "ends": "01/25/2020",
-      "id": 2
-    },
-    {
-      "task": "Postuler wildcodeschool",
-      "note": "Penser à montrer portfolio",
-      "starts": "01/24/2020",
-      "ends": "01/31/2020",
-      "id": 3
-    },
-    {
-      "task": "Changer maillot de bain",
-      "note": "Penser à essayer le nouveau",
-      "starts": "01/24/2020",
-      "ends": "01/26/2020",
-      "id": 4
-    },
-    {
-      "task": "Nettoyer chambre",
-      "note": "clavier cassé à jeter, mégot à jeter",
-      "starts": "01/27/2020",
-      "ends": "01/30/2020",
-      "id": 5
-    }
-  ],
+  "tasks": [],
   "done": []
 }
